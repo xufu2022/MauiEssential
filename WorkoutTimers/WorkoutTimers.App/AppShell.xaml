@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="WorkoutTimers.App.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:WorkoutTimers.App.Views"
+    Shell.FlyoutBehavior="{OnIdiom Phone=Flyout, Default=Locked}">
+
+    <FlyoutItem Title="Regular Fly">
+    <ShellContent
+        Title="Regular"
+        ContentTemplate="{DataTemplate views:RegularIntervals}"
+        Route="RegularIntervals" />
+    </FlyoutItem>
+    <FlyoutItem Title="Staggered Fly">
+        <ShellContent
+        Title="Staggered"
+        ContentTemplate="{DataTemplate views:StaggeredIntervals}"
+        Route="StaggeredIntervals" />
+    </FlyoutItem>
+
+    <MenuItem Text="Settings" Command="{Binding NavigateToSettingsCommand}" /> 
+</Shell>
